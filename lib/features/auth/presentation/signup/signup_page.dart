@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../shared/widgets/input_field.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,29 +15,44 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 40),
 
               // logo
               const Icon(
-                Icons.lock,
-                size: 100,
+                Icons.person,
+                size: 90,
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
 
               // welcome back, you've been missed!
               Text(
-                'Welcome back you\'ve been missed!',
+                'Welcome, new here create an account',
                 style: TextStyle(
                   color: Colors.grey[700],
                   fontSize: 16,
                 ),
               ),
-
               const SizedBox(height: 25),
 
               // username textfield
-              InputField(
+              const InputField(
+                controller: null,
+                hintText: 'First Name',
+                obscureText: false,
+              ),
+              const SizedBox(height: 10),
+
+              // username textfield
+              const InputField(
+                controller: null,
+                hintText: 'Last Name',
+                obscureText: false,
+              ),
+              const SizedBox(height: 10),
+
+              // username textfield
+              const InputField(
                 controller: null,
                 hintText: 'Email',
                 obscureText: false,
@@ -46,33 +61,18 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 10),
 
               // password textfield
-              InputField(
+              const InputField(
                 controller: null,
                 hintText: 'Password',
                 obscureText: true,
               ),
 
-              const SizedBox(height: 10),
-
               // forgot password?
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Forgot Password?',
-                      style: TextStyle(color: Colors.grey[600]),
-                    ),
-                  ],
-                ),
-              ),
-
               const SizedBox(height: 25),
 
               // sign in button
               LoginButton(
-                text: 'LOGIN',
+                text: 'Register',
                 color: Colors.black87,
                 loginMethod: () => {
                   print("hello"),
@@ -80,7 +80,7 @@ class LoginPage extends StatelessWidget {
                 icon: Icons.login,
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
 
               // or continue with
               Padding(
@@ -110,7 +110,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
 
               // google + apple sign in buttons
               Row(
@@ -139,21 +139,21 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
 
               // not a member? register now
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Not a member?',
+                    'You have an account',
                     style: TextStyle(color: Colors.grey[700]),
                   ),
                   const SizedBox(width: 4),
                   TextButton(
-                    onPressed: () => context.goNamed('signup'),
+                    onPressed: () => context.go("/"),
                     child: const Text(
-                      'Register now',
+                      'Login here',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
