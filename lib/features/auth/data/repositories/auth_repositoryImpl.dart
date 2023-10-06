@@ -6,7 +6,7 @@ import 'package:edu_app/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
   @override
-  Future<Either<Failure, Login>> login() {
+  Future<Either<Failure, Login>> login(String email, String password) {
     // TODO: implement login
     throw UnimplementedError();
   }

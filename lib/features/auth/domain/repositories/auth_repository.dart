@@ -1,9 +1,12 @@
 import 'package:dartz/dartz.dart';
-import '../entities/entities.dart';
+
 import '../../../../core/error/failure.dart';
+import '../../data/models/auth_response_model.dart';
+import '../entities/entities.dart';
 
 abstract class AuthRepository {
-    Future<Either<Failure, Login>> login();
-    
-    Future<Either<Failure, SignUp>> signup();
+  Future<Either<Failure, AuthResponseModel>> login(
+      String email, String password);
+
+  Future<Either<Failure, SignUp>> signup();
 }
