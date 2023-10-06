@@ -16,3 +16,6 @@ class ServerFailure extends Failure {
   int get hashCode => message.hashCode;
 }
 
+class ServerException extends ServerFailure {
+  ServerException(super.message);
+}
